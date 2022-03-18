@@ -15,11 +15,10 @@ USER_EMAIL="$NUM@contoso.com"
 
 az group create -l $LOCATION -n $RESOURCE_GROUP_NAME
 
-az group deployment create \
+az deployment group create \
     --name "$PREFIX-deployment-$NUM" \
     --resource-group $RESOURCE_GROUP_NAME \
-    --template-file "template.json" \
-    --parameters "location=$LOCATION" \
-                 "name=$APP_NAME" \
+    --template-uri "https://raw.githubusercontent.com/zzcodework/iotcentral/main/template.json" \
+    --parameters "name=$APP_NAME" \
                  "manifest=$APP_TEMPLATE_NAME" \
                  "user=$USER_EMAIL"
