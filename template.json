@@ -32,7 +32,7 @@
                 "users": [
                     {
                         "user": "iotcentral@hotmail.com",
-                        "role": "administrator"
+                        "role": "builder"
                     },
                     {
                         "user": "[parameters('user')]",

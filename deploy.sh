@@ -16,6 +16,7 @@ USER_EMAIL="$NUM@contoso.com"
 az group create -l $LOCATION -n $RESOURCE_GROUP_NAME
 
 az deployment group create \
+    --mode Incremental \
     --name "$PREFIX-deployment-$NUM" \
     --resource-group $RESOURCE_GROUP_NAME \
     --template-uri "https://raw.githubusercontent.com/zzcodework/iotcentral/main/template.json" \
