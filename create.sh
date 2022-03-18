@@ -6,13 +6,14 @@ az account set -s $SUBSCRIPTION_ID
 az account show
 
 NUM=$RANDOM
+LOCATION="eastus"
 PREFIX="iotc"
 RESOURCE_GROUP_NAME="$PREFIX-$NUM"
 APP_NAME="$PREFIX-app-$NUM"
 APP_TEMPLATE_NAME="iotc-meter"
 USER_EMAIL="$NUM@contoso.com"
 
-az group create -l eastus -n $RESOURCE_GROUP_NAME
+az group create -l $LOCATION -n $RESOURCE_GROUP_NAME
 az iot central app create -g $RESOURCE_GROUP_NAME -n $APP_NAME -s $APP_NAME --template $APP_TEMPLATE_NAME
 
 # If you and the subscription are created in the same $TENANT_ID, skip these steps.
